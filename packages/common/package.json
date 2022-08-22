@@ -1,6 +1,6 @@
 {
-  "name": "common-design-system",
-  "version": "0.0.1",
+  "name": "khue-common-design-system",
+  "version": "0.0.7",
   "scripts": {
     "preview": "vite preview --port 4173",
     "test:unit": "vitest --environment jsdom",
@@ -12,7 +12,8 @@
   "peerDependencies": {
     "vue": "^3.2.37"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+  "repository": {
+    "type": "git",
+    "url": ""
   }
 }
