@@ -1,6 +1,6 @@
 {
   "name": "khue-common-design-system",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "scripts": {
     "preview": "vite preview --port 4173",
     "test:unit": "vitest --environment jsdom",
@@ -15,5 +15,16 @@
   "repository": {
     "type": "git",
     "url": ""
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/my-lib.umd.cjs",
+  "module": "./dist/my-lib.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/my-lib.es.js",
+      "require": "./dist/my-lib.umd.cjs"
+    }
   }
 }
