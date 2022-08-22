@@ -1,0 +1,14 @@
+0 silly argv {
+0 silly argv   _: [ 'add' ],
+0 silly argv   scope: 'demo',
+0 silly argv   globs: [],
+0 silly argv   lernaVersion: '5.4.3',
+0 silly argv   '$0': 'lerna',
+0 silly argv   pkg: '@test/common-design'
+0 silly argv }
+1 notice cli v5.4.3
+2 verbose rootPath /Users/khuehuynh/Working/KMS/PADI_Code/padi-design-system
+3 error HttpErrorGeneral: 404 Not Found - GET https://registry.npmjs.org/@test%2fcommon-design - Not found
+3 error     at /Users/khuehuynh/Working/KMS/PADI_Code/padi-design-system/node_modules/npm-registry-fetch/lib/check-response.js:95:15
+3 error     at processTicksAndRejections (internal/process/task_queues.js:95:5)
+3 error     at async RegistryFetcher.packument (/Users/khuehuynh/Working/KMS/PADI_Code/padi-design-system/node_modules/pacote/lib/registry.js:92:19)

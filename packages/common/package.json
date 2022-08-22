@@ -1,0 +1,18 @@
+{
+  "name": "common-design-system",
+  "version": "0.0.1",
+  "scripts": {
+    "preview": "vite preview --port 4173",
+    "test:unit": "vitest --environment jsdom",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "build": "rimraf dist &&  vue-tsc --noEmit && vite build"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.37"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
+}
