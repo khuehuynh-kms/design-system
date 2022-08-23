@@ -1,13 +1,13 @@
 {
-  "name": "khue-common-design-system",
-  "version": "0.0.8",
+  "name": "p-common-design-system",
+  "version": "0.0.17",
   "scripts": {
     "preview": "vite preview --port 4173",
     "test:unit": "vitest --environment jsdom",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "build": "rimraf dist &&  vue-tsc --noEmit && vite build"
+    "build": "rimraf dist && vite build && vue-tsc --emitDeclarationOnly"
   },
   "peerDependencies": {
     "vue": "^3.2.37"
@@ -19,12 +19,16 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/my-lib.umd.cjs",
-  "module": "./dist/my-lib.es.js",
+  "main": "./dist/lib.umd.js",
+  "module": "./dist/lib.es.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/my-lib.es.js",
-      "require": "./dist/my-lib.umd.cjs"
+      "import": "./dist/lib.es.js",
+      "require": "./dist/lib.umd.js"
     }
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
   }
 }
