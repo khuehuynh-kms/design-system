@@ -1,31 +1,35 @@
-# PADI Design System
 
-**PADI Design System** is tool for building PADI UI with [Vue.js](https://vuejs.org). It provides you and your team a set of organized tools, patterns & practices that work as the foundation for your application development.
+# PADI Monorepos Libraries
 
-The tool is built on top of [Vue.js](https://vuejs.org), [Vue Styleguidist](https://github.com/vue-styleguidist/vue-styleguidist), [Vite](https://vitejs.dev/),  and is aimed for designers and front-end developers who have at least basic knowledge of component based workflows + HTML, PostCSS, SCSS & JavaScript.
+**PADI Monorepos Libraries** is a list app libraries.
 
-## Features
+ 1. UI Design system
+ 2. TBD
 
-- A set of interconnected patterns & practices for you and your team.
-- A well thought-out terminology, naming conventions, and hierarchy.
-- Get an automated overview of how your design system progresses over time.
-- Global design tokens in YAML format that you can use inside any component.
-- Automatic generation of living, user editable documentation.
-- Easily export and use your Design System as an NPM dependency in another Vue.js project.
-- Create a token, an element, or a pattern, and it’s immediately available across all components.
-- Pre-configured ESLINT, Stylelint, Prettier setup for auto-formatting code on before commit.
-- Live Reloading, Autoprefixing, PostCSS, SCSS, and helper functions + simple and sane defaults for SVG and Webfont usage out-of-the-box.
-- Documentation and the app logic are separated, so you can have public docs while the app itself stays private.
-- [And more…](https://designs.padi.com/)
+The tools are built on top of [Vue.js](https://vuejs.org), [Vue Styleguidist](https://github.com/vue-styleguidist/vue-styleguidist), [Vite](https://vitejs.dev/),  and is aimed for designers and front-end developers who have at least basic knowledge of component based workflows + HTML, PostCSS, SCSS & JavaScript.
+
+## Progress
+
+- Define monorepos app structure [Done]
+- Config: typescript, ESLint, build ui design system [Done]
+- Add unit test [In-progress]
+- Add storybook for ui design system [In-progress]
+
+## Migration Notes
+### Ui design system
+ - Migrate from learning-design-system lib
+ - Using the Vue3 Option component when migrating.
 
 ## Documentation
-Install dependency
+- https://github.com/sethidden/vue3-eslint-stylelint-demo
+- https://vuejs.org/guide/typescript/overview.html
 
+Install dependencies
 ```
 yarn
 ```
 
-Build common packages
+Build ui design system package
 
 ```
 npx lerna run build
@@ -33,7 +37,7 @@ npx lerna run build
 
 ## Examples
 
-The app import common ui
-https://github.com/khuehuynh-kms/design-system/tree/feat/app
-Coming Soon
+The app import ui-design-system
+https://github.com/khuehuynh-kms/design-system/tree/feat/app [In-progress]
+
 

@@ -1,52 +1,53 @@
-# Khue-design-system-common
 
-This template should help get you started developing with Vue 3 in Vite.
+# PADI Design System
 
-## Recommended IDE Setup
+  
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+**PADI Design System** is tool for building PADI UI with [Vue.js](https://vuejs.org). It provides you and your team a set of organized tools, patterns & practices that work as the foundation for your application development.
 
-## Type Support for `.vue` Imports in TS
+  
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+The tool is built on top of [Vue.js](https://vuejs.org), [Vue Styleguidist](https://github.com/vue-styleguidist/vue-styleguidist), [ViteJS](https://vitejs.dev/), and [storybook](https://storybook.js.org/) and is aimed for designers and front-end developers who have at least basic knowledge of component based workflows + HTML, PostCSS, SCSS & JavaScript.
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+  
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+## Features
 
-## Customize configuration
+  
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- A set of interconnected patterns & practices for you and your team.
 
-## Project Setup
+- A well thought-out terminology, naming conventions, and hierarchy.
 
-```sh
-npm install
-```
+- Get an automated overview of how your design system progresses over time.
 
-### Compile and Hot-Reload for Development
+- Global design tokens in YAML format that you can use inside any component.
 
-```sh
-npm run dev
-```
+- Automatic generation of living, user editable documentation.
 
-### Type-Check, Compile and Minify for Production
+- Easily export and use your Design System as an NPM dependency in another Vue.js project.
 
-```sh
-npm run build
-```
+- Create a token, an element, or a pattern, and it’s immediately available across all components.
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+- Pre-configured ESLINT, Stylelint, Prettier setup for auto-formatting code on before commit.
 
-```sh
-npm run test:unit
-```
+- Live Reloading, Autoprefixing, PostCSS, SCSS, and helper functions + simple and sane defaults for SVG and Webfont usage out-of-the-box.
 
-### Lint with [ESLint](https://eslint.org/)
+- Documentation and the app logic are separated, so you can have public docs while the app itself stays private.
 
-```sh
-npm run lint
-```
+- [And more…](https://designs.padi.com/)
+
+  
+
+## Progress
+
+- Just add some components to test build, config.
+
+  
+
+
+## Examples
+
+  
+
+Coming Soon
