@@ -19,10 +19,7 @@
     "outDir": "dist",
     "declaration": true,
     "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "types": [
-      "webpack-env"
-    ],
+    "forceConsistentCasingInFileNames": true
   },
   "include": [
     "src/**/*.ts",
