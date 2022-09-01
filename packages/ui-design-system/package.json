@@ -7,7 +7,9 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "build": "rimraf dist && vite build && vue-tsc --emitDeclarationOnly"
+    "build": "rimraf dist && vite build && vue-tsc --emitDeclarationOnly",
+    "storybook": "start-storybook -p 6006",
+    "build:storybook": "build-storybook"
   },
   "peerDependencies": {
     "vue": "^3.2.37"
@@ -35,10 +37,25 @@
     }
   },
   "dependencies": {
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "@padi/language": "*"
   },
   "devDependencies": {
-    "sass": "^1.54.5",
-    "sass-loader": "^13.0.2"
+    "@intlify/vite-plugin-vue-i18n": "^5.0.1",
+    "@storybook/addon-a11y": "^6.5.9",
+    "@storybook/addon-actions": "^6.5.9",
+    "@storybook/addon-essentials": "^6.5.9",
+    "@storybook/addon-links": "^6.5.9",
+    "@storybook/builder-vite": "^0.2.2",
+    "@storybook/vue3": "^6.5.9",
+    "eslint-plugin-markdown": "^2.2.1",
+    "eslint-plugin-storybook": "^0.6.1",
+    "postcss-html": "^1.5.0",
+    "postcss-scss": "^4.0.4",
+    "prettier": "^2.7.1",
+    "storybook-dark-mode": "^1.1.0",
+    "stylelint": "^14.11.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recommended-vue": "^1.4.0"
   }
 }
