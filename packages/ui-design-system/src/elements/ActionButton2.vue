@@ -106,7 +106,7 @@ const ActionButton = defineComponent({
     },
     version: {
       type: String,
-      default: 'ActionButton_orinal'
+      default: 'ActionButton2'
     }
   },
   data() {
