@@ -15,14 +15,14 @@
         {{ action.label }}
       </div>
     </div>
-    <span>{{version}}</span>
+    <span>{{ version }}</span>
   </component>
 </template>
 
 <script lang="ts">
 import type { PropType } from 'vue'
 import { defineComponent } from 'vue'
-import colors from '@/assets/themes/colors.json'
+import colors from '../assets/themes/colors.json'
 
 /**
  * Action buttons are used when a set of contextual actions are needed for an
@@ -57,7 +57,7 @@ type ActionProp = {
 }
 
 const ActionButton = defineComponent({
-  name: 'ActionButton',
+  name: 'ActionButton2',
   status: 'ready',
   release: '0.0.1',
   props: {
@@ -106,8 +106,8 @@ const ActionButton = defineComponent({
     },
     version: {
       type: String,
-      default: 'ActionButton2'
-    }
+      default: 'ActionButton2_khue',
+    },
   },
   data() {
     return {

@@ -1,6 +1,6 @@
 {
   "name": "p-common-design-system",
-  "version": "0.0.17",
+  "version": "0.0.32",
   "scripts": {
     "preview": "vite preview --port 4173",
     "test:unit": "vitest --environment jsdom",
@@ -17,18 +17,28 @@
     "url": ""
   },
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "main": "./dist/lib.umd.js",
-  "module": "./dist/lib.es.js",
+  "module": "./src/index.ts",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/lib.es.js",
+      "import": "./src/index.ts",
       "require": "./dist/lib.umd.js"
+    },
+    "./src/": "./src/",
+    "./src/assets/themes/variables.scss": {
+      "import": "./src/assets/themes/variables.scss",
+      "require": "./src/assets/themes/variables.scss"
     }
   },
   "dependencies": {
     "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "sass": "^1.54.5",
+    "sass-loader": "^13.0.2"
   }
 }
