@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import {ActionButton, InputText} from 'p-common-design-system';
+// import {ActionButton1} from 'p-common-design-system';
 
 </script>
 
 <template>
-  <ActionButton></ActionButton>
-  <InputText label1={{10}} />
+  <ActionButton1>hello</ActionButton1>
+  <span>I'm here</span>
 </template>
 
 <style scoped>
