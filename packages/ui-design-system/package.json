@@ -1,6 +1,6 @@
 {
   "name": "p-common-design-system",
-  "version": "0.0.32",
+  "version": "0.0.33",
   "scripts": {
     "preview": "vite preview --port 4173",
     "test:unit": "vitest --environment jsdom",
@@ -30,11 +30,7 @@
       "import": "./src/index.ts",
       "require": "./dist/lib.umd.js"
     },
-    "./src/": "./src/",
-    "./src/assets/themes/variables.scss": {
-      "import": "./src/assets/themes/variables.scss",
-      "require": "./src/assets/themes/variables.scss"
-    }
+    "./src/": "./src/"
   },
   "dependencies": {
     "lodash": "^4.17.21",
@@ -56,6 +52,7 @@
     "storybook-dark-mode": "^1.1.0",
     "stylelint": "^14.11.0",
     "stylelint-config-prettier": "^9.0.3",
-    "stylelint-config-recommended-vue": "^1.4.0"
+    "stylelint-config-recommended-vue": "^1.4.0",
+    "vite-svg-loader": "^3.5.1"
   }
 }

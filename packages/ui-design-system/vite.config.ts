@@ -2,19 +2,17 @@ import vue from "@vitejs/plugin-vue";
 // import vueI18n from "@intlify/vite-plugin-vue-i18n";
 import path from "path";
 import { defineConfig } from "vite";
+import svgLoader from 'vite-svg-loader'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
-    // vueI18n({
-    //   include: path.resolve(__dirname, "./src/locales/**"),
-    //   runtimeOnly: false,
-    // }),
+    svgLoader()
   ],
   resolve: {
     alias: {
-      "@/": new URL("./src/", import.meta.url).pathname,
+      "src/": new URL("./src/", import.meta.url).pathname,
     },
   },
   build: {
@@ -40,7 +38,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@import "src/assets/themes/variables.scss";`,
+        additionalData: `@import "src/styles/styles.scss";`,
       },
     },
   },

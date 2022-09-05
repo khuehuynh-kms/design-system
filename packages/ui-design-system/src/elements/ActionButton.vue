@@ -15,15 +15,15 @@
         {{ action.label }}
       </div>
     </div>
-    <span>{{ version }}</span>
   </component>
 </template>
 
 <script lang="ts">
-import type { PropType } from 'vue'
-import { defineComponent } from 'vue'
+import type { PropType } from 'vue';
+import { defineComponent } from 'vue';
+import Icon from './Icon.vue';
 
-import colors from '../assets/themes/colors.json'
+import colors from '../assets/themes/colors.json';
 
 /**
  * Action buttons are used when a set of contextual actions are needed for an
@@ -109,6 +109,9 @@ const ActionButton = defineComponent({
       type: String,
       default: 'ActionButton_orinal',
     },
+  },
+  components: {
+    Icon
   },
   data() {
     return {
