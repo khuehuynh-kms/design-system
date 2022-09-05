@@ -76,8 +76,8 @@ The tool is built on top of [Vue.js](https://vuejs.org), [Vue Styleguidist](http
 	│   README.md
 	│   package.json    
 	└───src
-	│   └───accets
-	|	└───elements
+	│   └───assets
+	|   └───elements
 	|   └───...
 	└───dist
 	    │   build file
@@ -86,12 +86,12 @@ The tool is built on top of [Vue.js](https://vuejs.org), [Vue Styleguidist](http
  ## How to use
  
 #### 1. Import as a normal lib
-This way will add all ui-libs build files into the app build. So, we can have many components unused. No suggestion.
+This way will add all ui-libs build files into the app build. So, we can have many components unused in a bundle. No suggestion.
 
     `import uiLib from 'padi-design-system'`
 
   #### 2. Import direct the component
-This way will only add the using components into the app build. So, we can have many components unused. Suggestion
+This way will only add the using components into the app build. Suggestion
 
     `import ActionButton from 'padi-design-system/src/elements/ActionButton.vue'`
 
