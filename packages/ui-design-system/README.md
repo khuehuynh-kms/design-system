@@ -63,13 +63,9 @@ The tool is built on top of [Vue.js](https://vuejs.org), [Vue Styleguidist](http
 
   
 
-- [And more…](https://designs.padi.com/)
-
   
 
-  
-
-## Development Notes:
+## Development Notes:
 
  - Using import absolute path, not start with '@/'. 
  `import  Icon  from  './Icon.vue';`
@@ -115,7 +111,21 @@ export  default  defineConfig({
 	},
 })
 ```
+
+## Command
+
+Install
+
+    yarn
   
+Start storybook
+
+    yarn storybook
+
+Publish
+
+    npm publish
+
 
 ## Examples
 
