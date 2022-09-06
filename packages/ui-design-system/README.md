@@ -112,6 +112,9 @@ export  default  defineConfig({
 })
 ```
 
+## Plugins
+Volar [https://github.com/johnsoncodehk/volar]
+
 ## Command
 
 Install
@@ -121,6 +124,10 @@ Install
 Start storybook
 
     yarn storybook
+
+Build
+
+    yarn build
 
 Publish
 
