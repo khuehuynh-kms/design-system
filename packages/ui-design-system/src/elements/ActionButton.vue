@@ -19,11 +19,11 @@
 </template>
 
 <script lang="ts">
-import type { PropType } from 'vue';
-import { defineComponent } from 'vue';
-import Icon from './Icon.vue';
+import type { PropType } from 'vue'
+import { defineComponent } from 'vue'
+import Icon from './Icon.vue'
 
-import colors from '../assets/themes/colors.json';
+import colors from '../assets/themes/colors.json'
 
 /**
  * Action buttons are used when a set of contextual actions are needed for an
@@ -61,6 +61,9 @@ const ActionButton = defineComponent({
   name: 'ActionButton',
   status: 'ready',
   release: '0.0.1',
+  components: {
+    Icon,
+  },
   props: {
     /**
      * The html element used for the action button.
@@ -105,13 +108,6 @@ const ActionButton = defineComponent({
       default: 'ltr',
       validator: (value: string): boolean => Boolean(value.match(/(ltr|rtl)/)),
     },
-    version: {
-      type: String,
-      default: 'ActionButton_orinal',
-    },
-  },
-  components: {
-    Icon
   },
   data() {
     return {

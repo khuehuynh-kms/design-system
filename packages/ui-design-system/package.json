@@ -1,6 +1,6 @@
 {
   "name": "p-common-design-system",
-  "version": "0.0.33",
+  "version": "0.0.35",
   "scripts": {
     "preview": "vite preview --port 4173",
     "test:unit": "vitest --environment jsdom",
@@ -52,7 +52,6 @@
     "storybook-dark-mode": "^1.1.0",
     "stylelint": "^14.11.0",
     "stylelint-config-prettier": "^9.0.3",
-    "stylelint-config-recommended-vue": "^1.4.0",
-    "vite-svg-loader": "^3.5.1"
+    "stylelint-config-recommended-vue": "^1.4.0"
   }
 }

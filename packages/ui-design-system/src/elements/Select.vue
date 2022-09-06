@@ -6,7 +6,6 @@
     <!-- The select UI. -->
     <div class="select__ui">
       <div
-        @click="toggleOptions()"
         ref="select"
         :class="[
           'select__toggle',
@@ -15,13 +14,14 @@
             selectedDisabled: !optionSelected.label && (placeholder || prefix),
           },
         ]"
+        @click="toggleOptions()"
       >
         {{ prefix }}
         {{ optionSelected.label ? optionSelected.label : placeholder }}
         <Icon class="select__caret" name="arrow-down" />
       </div>
 
-      <ul class="select__options" v-if="optionsVisible">
+      <ul v-if="optionsVisible" class="select__options">
         <li
           v-for="(optionValue, optionLabel) in options"
           :key="optionValue"
@@ -63,8 +63,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import validatorReg from "../utils/validatorReg";
+import { defineComponent } from 'vue'
+import validatorReg from '../utils/validatorReg'
 /**
  * Selects are generally used in forms but suitable for other purposes.
  *
@@ -74,9 +74,10 @@ import validatorReg from "../utils/validatorReg";
  */
 
 const Select = defineComponent({
-  name: "Select",
-  status: "ready",
-  release: "0.0.1",
+  // eslint-disable-next-line vue/no-reserved-component-names
+  name: 'Select',
+  status: 'ready',
+  release: '0.0.1',
   props: {
     /**
      * The options to be loaded.
@@ -95,21 +96,21 @@ const Select = defineComponent({
      */
     value: {
       type: [String, Number],
-      default: "",
+      default: '',
     },
     /**
      * The prefix of select.
      */
     prefix: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * The placeholder when no option is selected.
      */
     placeholder: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Unique identifier of the form select field.
@@ -151,7 +152,7 @@ const Select = defineComponent({
      */
     wrapper: {
       type: String,
-      default: "div",
+      default: 'div',
       validator: validatorReg(/(div|section)/),
     },
     /**
@@ -225,18 +226,19 @@ const Select = defineComponent({
      */
     dir: {
       type: String,
-      default: "ltr",
+      default: 'ltr',
       validator: validatorReg(/(ltr|rtl)/),
     },
   },
   data() {
     return {
       optionSelected: {
-        label: "",
-        value: "",
+        label: '',
+        value: '',
       },
       optionsVisible: false,
-    };
+      lazyValue: '',
+    }
   },
   computed: {
     /**
@@ -245,86 +247,86 @@ const Select = defineComponent({
     error() {
       return {
         message: this.errorMessage,
-      };
+      }
     },
+  },
+  // watch: {
+  //   value(newValue: string) {
+  //     const optionLabel = Object.keys(this.options).find(
+  //       (key) => this.options[key] === this.value,
+  //     )
+  //     this.updateOption(optionLabel, newValue, 'change')
+  //   },
+  //   options(newValue) {
+  //     const optionLabel = Object.keys(newValue).find(
+  //       (key) => newValue[key] === this.value,
+  //     )
+  //     if (typeof newValue.optionLabel !== undefined) {
+  //       this.optionSelected.label = optionLabel
+  //       this.optionSelected.value = this.value
+  //       this.$emit('updateOption', this.optionSelected)
+  //     }
+  //   },
+  // },
+  // mounted() {
+  //   if (this.value) {
+  //     const optionLabel = Object.keys(this.options).find(
+  //       (key) => this.options[key] === this.value,
+  //     )
+  //     this.updateOption(optionLabel, this.value, 'change')
+  //   }
+  //   if (this.placeholder) {
+  //     this.placeholderText = this.placeholder
+  //   }
+  // },
+  created() {
+    document.addEventListener('click', this.documentClick)
+  },
+  unmounted() {
+    document.removeEventListener('click', this.documentClick)
   },
   methods: {
     /** Triggers during user input select update.
      * @event input
      * @type {Event}
      */
-    updateOption(optionLabel: string, optionValue: string, event: Event) {
-      this.optionSelected.label = optionLabel;
-      this.optionSelected.value = optionValue;
-      this.optionsVisible = false;
-      this.$emit("updateOption", this.optionSelected);
-      this.updateValue(event, "input");
+    updateOption(optionLabel: any, optionValue: string, event: Event) {
+      this.optionSelected.label = optionLabel
+      this.optionSelected.value = optionValue
+      this.optionsVisible = false
+      this.$emit('updateOption', this.optionSelected)
+      this.updateValue(event, 'input')
     },
     /** Triggers when an option is selected.
      * @event input
      * @type {Event}
      */
     updateValue(event: Event, type: string) {
-      this.changeHandler(this.optionSelected.value, type, event);
+      this.changeHandler(this.optionSelected.value, type, event)
     },
     /** Triggers during user input and  emit value.
      * @event input
      * @type {Event}
      */
     changeHandler(value: string, type: string, event: Event) {
-      const emit = type !== undefined && type.length > 0 ? type : "input";
-      this.lazyValue = value;
-      this.$emit(emit, value, event);
+      const emit = type !== undefined && type.length > 0 ? type : 'input'
+      this.lazyValue = value
+      this.$emit(emit, value, event)
     },
     toggleOptions() {
-      this.optionsVisible = !this.optionsVisible;
+      this.optionsVisible = !this.optionsVisible
     },
     documentClick(event: Event) {
-      const el = this.$refs.select;
-      const { target } = event;
+      const el: any = this.$refs.select
+      const { target } = event
       if (el !== target && !el.contains(target)) {
-        this.optionsVisible = false;
+        this.optionsVisible = false
       }
     },
   },
-  mounted() {
-    if (this.value) {
-      let optionLabel = Object.keys(this.options).find(
-        (key) => this.options[key] === this.value
-      );
-      this.updateOption(optionLabel, this.value, "change");
-    }
-    if (this.placeholder) {
-      this.placeholderText = this.placeholder;
-    }
-  },
-  watch: {
-    value(newValue: string) {
-      let optionLabel = Object.keys(this.options).find(
-        (key) => this.options[key] === this.value
-      );
-      this.updateOption(optionLabel, newValue, "change");
-    },
-    options(newValue) {
-      let optionLabel = Object.keys(newValue).find(
-        (key) => newValue[key] === this.value
-      );
-      if (typeof newValue.optionLabel !== undefined) {
-        this.optionSelected.label = optionLabel;
-        this.optionSelected.value = this.value;
-        this.$emit("updateOption", this.optionSelected);
-      }
-    },
-  },
-  created() {
-    document.addEventListener("click", this.documentClick);
-  },
-  destroyed() {
-    document.removeEventListener("click", this.documentClick);
-  },
-});
+})
 
-export default Select;
+export default Select
 </script>
 
 <style scoped lang="scss">

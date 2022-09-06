@@ -14,16 +14,16 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import validatorReg from "../utils/validatorReg";
+import { defineComponent } from 'vue'
+import validatorReg from '../utils/validatorReg'
 /**
  * Checkboxes are generally used for interface actions. Suitable for all-purpose usevent
  * Defaults to appearance that has white background with grey border.
  */
 const Checkbox = defineComponent({
-  name: "Checkbox",
-  status: "ready",
-  release: "0.0.1",
+  name: 'Checkbox',
+  status: 'ready',
+  release: '0.0.1',
   props: {
     /**
      * The html element name used for the wrapper.
@@ -31,7 +31,7 @@ const Checkbox = defineComponent({
      */
     wrapper: {
       type: String,
-      default: "div",
+      default: 'div',
       validator: validatorReg(/(div|section)/),
     },
     /**
@@ -53,6 +53,7 @@ const Checkbox = defineComponent({
      */
     value: {
       type: String,
+      required: true,
     },
     /**
      * Manually trigger various states of the checkbox.
@@ -85,37 +86,37 @@ const Checkbox = defineComponent({
      */
     dir: {
       type: String,
-      default: "ltr",
+      default: 'ltr',
       validator: validatorReg(/(ltr|rtl)/),
-    },
-  },
-  methods: {
-    handleClick(event: Event) {
-      if (this.indeterminate) {
-        const checkbox = this.getCheckbox();
-        checkbox.indeterminate = false;
-      }
-      setTimeout(() => {
-        this.$emit("change", this.value, event);
-      }, 100);
-    },
-    getCheckbox() {
-      if (this.id) {
-        return document.getElementById(this.id);
-      }
-      const list = document.getElementsByTagName("input");
-      return list.find((c) => c.type === "checkbox");
     },
   },
   mounted() {
     if (this.indeterminate) {
-      const checkbox = this.getCheckbox();
-      checkbox.indeterminate = true;
+      const checkbox = this.getCheckbox()
+      checkbox.indeterminate = true
     }
   },
-});
+  methods: {
+    handleClick(event: Event) {
+      if (this.indeterminate) {
+        const checkbox = this.getCheckbox()
+        checkbox.indeterminate = false
+      }
+      setTimeout(() => {
+        this.$emit('change', this.value, event)
+      }, 100)
+    },
+    getCheckbox() {
+      if (this.id) {
+        return document.getElementById(this.id)
+      }
+      const list = document.getElementsByTagName('input') as unknown as any[]
+      return list.find((c: any) => c.type === 'checkbox')
+    },
+  },
+})
 
-export default Checkbox;
+export default Checkbox
 </script>
 
 <style lang="scss" scoped>
@@ -123,7 +124,7 @@ export default Checkbox;
   align-items: flex-start;
   display: inline-flex;
 
-  input[type="checkbox"] {
+  input[type='checkbox'] {
     -webkit-appearance: none;
     background-color: $color-white;
     border: 1px solid $color-grey;
@@ -143,7 +144,7 @@ export default Checkbox;
     &:checked::after {
       border: solid $color-white;
       border-width: 0 2px 2px 0;
-      content: "";
+      content: '';
       height: 8px;
       position: absolute;
       right: 6px;
@@ -161,7 +162,7 @@ export default Checkbox;
 
       &::after {
         border-top: 2px solid $color-white;
-        content: "";
+        content: '';
         position: absolute;
         right: 3px;
         top: 8px;
@@ -183,7 +184,7 @@ export default Checkbox;
   }
 
   &.error {
-    input[type="checkbox"] {
+    input[type='checkbox'] {
       border-color: $color-red;
     }
   }
@@ -191,7 +192,7 @@ export default Checkbox;
   &.disabled {
     pointer-events: none;
 
-    input[type="checkbox"] {
+    input[type='checkbox'] {
       border-color: $color-black;
       opacity: 0.2;
 
