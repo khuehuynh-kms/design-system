@@ -2702,10 +2702,10 @@ optionator@^0.9.1:
     type-check "^0.4.0"
     word-wrap "^1.2.3"
 
-p-common-design-system@0.0.34:
-  version "0.0.34"
-  resolved "https://registry.yarnpkg.com/p-common-design-system/-/p-common-design-system-0.0.34.tgz#ea48f7c3d8e6c9d7b2c007b583be3ab191a8aeb6"
-  integrity sha512-CcK7DUqL+jDK7ut/hrCLWIK6RWRBV3xY3e1g8YioQaAxwAU+Ep4KD7Ym0XQaLMCZxV1stx41WTHerlmJoAZjbQ==
+p-common-design-system@0.0.35:
+  version "0.0.35"
+  resolved "https://registry.yarnpkg.com/p-common-design-system/-/p-common-design-system-0.0.35.tgz#54cb01e4b11d4d2ba9bec6237b9e0908f58e9160"
+  integrity sha512-q4y026QD8fLK+OBZdX4aiEYryYaDWjiyjw9U4eMR9wSHd36CkJheRMYosjkVYTRTYBKkN5KOQGcKDEQ1BbAD5g==
   dependencies:
     "@padi/language" "*"
     lodash "^4.17.21"

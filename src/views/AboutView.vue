@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import ActionButton from 'p-common-design-system/src/elements/ActionButton.vue';
-import Icon from 'p-common-design-system/src/elements/Icon.vue';
+// import ActionButton from 'p-common-design-system/src/elements/ActionButton.vue';
+import Checkbox from 'p-common-design-system/src/elements/Checkbox.vue';
+
 
 
 const actionCb = () => {
