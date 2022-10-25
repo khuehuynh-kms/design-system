@@ -1,6 +1,6 @@
 {
   "name": "@khuehuynh-kms/p-common-design-system",
-  "version": "0.0.40",
+  "version": "0.0.1",
   "scripts": {
     "preview": "vite preview --port 4173",
     "test:unit": "vitest --environment jsdom",
@@ -33,5 +33,5 @@
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
-}
+  }
 }
