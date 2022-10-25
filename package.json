@@ -1,10 +1,18 @@
 {
-  "name": "design-system",
-  "private": true,
+  "name": "@khuehuynh-kms/design-system-khue",
+  "private":"true",
   "workspaces": [
     "packages/*",
     "apps/*"
   ],
+  "scripts": {
+    "bootstrap": "npm install  && lerna bootstrap",
+    "prepublishOnly": "lerna run build --stream",
+    "publish1": "lerna publish",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "npm run build && build-storybook",
+    "lint": "eslint packages --ext .ts,.vue --fix"
+  },
   "devDependencies": {
     "@babel/preset-env": "^7.18.10",
     "@jest/types": "^28.1.3",
@@ -45,8 +53,5 @@
     "vue-tsc": "^0.29.5",
     "webpack-bundle-analyzer": "^3.9.0"
   },
-  "engines": {
-    "npm": ">=8.0.0",
-    "node": ">=18.4.0"
-  }
+  "version": "0.0.3"
 }

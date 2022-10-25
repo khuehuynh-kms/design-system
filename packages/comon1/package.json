@@ -1,6 +1,7 @@
 {
-  "name": "@khuehuynh-kms/p-common-design-system",
+  "name": "@khuehuynh-kms/p-common-design-system1",
   "version": "0.0.40",
+  "private": "true",
   "scripts": {
     "preview": "vite preview --port 4173",
     "test:unit": "vitest --environment jsdom",
